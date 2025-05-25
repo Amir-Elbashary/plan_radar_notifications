@@ -4,8 +4,8 @@
   "basePath": "/",
   "apis": [
     {
-      "path": "/api/v1/tests.{format}",
-      "description": "Test"
+      "path": "/api/v1/users.{format}",
+      "description": "Users"
     }
   ],
   "authorizations": null

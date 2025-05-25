@@ -29,3 +29,6 @@
 
 en:
   hello: "Hello world"
+  errors:
+    validation_failed:
+      title: params validation has failed, please check details

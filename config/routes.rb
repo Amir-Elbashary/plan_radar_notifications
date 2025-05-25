@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   namespace :api, path: '/', defaults: { format: :json } do
     namespace :v1 do
-      post :test, to: 'tests#test'
+      resources :users, only: %i[create update]
     end
   end
 end
