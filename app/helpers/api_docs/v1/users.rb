@@ -8,7 +8,7 @@ module Docs
   end
 
   def self.create_params(api)
-    api.summary 'Test API'
+    api.summary 'Creating User'
     api.notes 'This API creates user'
     Docs.add_common_params(api)
 

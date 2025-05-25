@@ -11,9 +11,9 @@ RSpec.describe User, type: :model do
     end
   end
 
-  xdescribe 'Has associations' do
+  describe 'Has associations' do
     it 'has many tickets' do
-      should have_many(:logins)
+      should have_many(:tickets)
     end
   end
 end

@@ -8,7 +8,7 @@
       "path": "/v1/users.json",
       "operations": [
         {
-          "summary": "Test API",
+          "summary": "Creating User",
           "notes": "This API creates user",
           "parameters": [
             {

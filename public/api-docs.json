@@ -6,6 +6,10 @@
     {
       "path": "/api/v1/users.{format}",
       "description": "Users"
+    },
+    {
+      "path": "/api/v1/tickets.{format}",
+      "description": "Tickets"
     }
   ],
   "authorizations": null
