@@ -7,4 +7,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root to: redirect('/api/')
+
+  namespace :api, path: '/', defaults: { format: :json } do
+    namespace :v1 do
+      post :test, to: 'tests#test'
+    end
+  end
 end
