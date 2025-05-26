@@ -4,7 +4,7 @@ class CreateTickets < ActiveRecord::Migration[7.2]
       t.references :user, foreign_key: true
       t.string :title
       t.text :description
-      t.date :due_date
+      t.date :due_date, index: true
       t.integer :status_id
       t.integer :progress
 

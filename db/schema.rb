@@ -23,6 +23,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_25_154802) do
     t.integer "progress"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["due_date"], name: "index_tickets_on_due_date"
     t.index ["user_id"], name: "index_tickets_on_user_id"
   end
 
@@ -35,6 +36,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_25_154802) do
     t.string "time_zone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["send_due_date_reminder"], name: "index_users_on_send_due_date_reminder"
   end
 
   add_foreign_key "tickets", "users"

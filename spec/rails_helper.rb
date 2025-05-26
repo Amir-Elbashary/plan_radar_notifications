@@ -22,23 +22,23 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
-# RSpec::Sidekiq.configure do |config|
-#   config.warn_when_jobs_not_processed_by_sidekiq = false
-# end
+RSpec::Sidekiq.configure do |config|
+  config.warn_when_jobs_not_processed_by_sidekiq = false
+end
 
 RSpec.configure do |config|
   # config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   config.use_transactional_fixtures = false
 
-  # config.before(:all) do
-  #   Sidekiq::Testing.fake!
-  # end
+  config.before(:all) do
+    Sidekiq::Testing.fake!
+  end
 
   config.before(:each) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.start
-    # Sidekiq::Worker.clear_all
+    Sidekiq::Job.clear_all
   end
 
   config.after(:each) do
