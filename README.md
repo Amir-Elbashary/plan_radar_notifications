@@ -21,6 +21,7 @@ After some searching i came to the colcusion that polling would be the best way 
 by running a job which loop through users and add jobs only when they match the time
 Also this makes sure if some job fail, it will run again in a given interval (currently 1 min)
 but i can be adjusted to whatever suits our needs
+- It's a Linear time complixity O(n) but still, i think it's better than the first solution
 
 I added some optional stuff on the app just to make it as close as full application
 - Api Docs
