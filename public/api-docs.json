@@ -1,0 +1,16 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "apis": [
+    {
+      "path": "/api/v1/users.{format}",
+      "description": "Users"
+    },
+    {
+      "path": "/api/v1/tickets.{format}",
+      "description": "Tickets"
+    }
+  ],
+  "authorizations": null
+}
