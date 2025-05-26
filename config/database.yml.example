@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+
+
+development:
+  <<: *default
+  database: plan_radar_notifications_development
+
+test:
+  <<: *default
+  database: plan_radar_notifications_test
+
+production:
+  <<: *default
+  database: plan_radar_notifications_production
+  username: plan_radar_notifications
+  password: <%= ENV["PLAN_RADAR_NOTIFICATIONS_DATABASE_PASSWORD"] %>
