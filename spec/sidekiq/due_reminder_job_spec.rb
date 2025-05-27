@@ -32,10 +32,14 @@ RSpec.describe DueReminderJob, type: :job do
   end
 
   it 'executes and sends reminder email' do
+    expect(Ticket.first.progress).to eq(0)
+
     Sidekiq::Testing.inline!
     expect {
       DueReminderJob.new.perform
     }.to change { ActionMailer::Base.deliveries.count }.by(1)
+
+    expect(Ticket.first.progress).to eq(1)
   end
 
   it 'does not send email if time does not match' do
