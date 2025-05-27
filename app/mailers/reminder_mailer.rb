@@ -1,9 +1,9 @@
 class ReminderMailer < ApplicationMailer
   default from: 'notifications@planradar.com'
 
-  def ticket_due_reminder(user, tickets)
+  def ticket_due_reminder(user, ticket)
     @user = user
-    @tickets = tickets
-    mail(to: @user.email, subject: "Reminder: You have tickets due soon")
+    @ticket = ticket
+    mail(to: @user.email, subject: "Reminder: #{@ticket.title}")
   end
 end
